@@ -40,3 +40,5 @@ tags:
 
 
 ###### 이후에 Residual을 더하고 Layer Normalization을 수행한후 각각의 단어를 FC Layer을 통과하여 다음 Layer에 전달하게 됩니다.
+
+###### 이상으로 Attention is all you need 논문 리뷰를 마치도록 하겠습니다.
