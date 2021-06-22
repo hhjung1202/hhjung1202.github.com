@@ -7,6 +7,8 @@ tags:
   - NLP
   - Vision
   - NIPS 2017
+use_math: true
+comments: true
 ---
 
 ###### 2017년에 발표한 Attention is all you need 논문 리뷰를 시작하겠습니다. <br/> 해당 포스트에서는 Transformer을 Vision에서 어떻게 사용되는지를 분석하기 위함이므로 Self Attention과 Multi-Head Attention의 이해를 중심으로 설명하겠습니다.
