@@ -2,10 +2,6 @@
 
 {% include seo.html %}
 
-{% if page.use_math %}
-  {% include mathjax_support.html %}
-{% endif %}
-
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
@@ -40,4 +36,9 @@
   {% for script in site.head_scripts %}
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
+{% endif %}
+
+
+{% if page.use_math %}
+  {% include mathjax_support.html %}
 {% endif %}
