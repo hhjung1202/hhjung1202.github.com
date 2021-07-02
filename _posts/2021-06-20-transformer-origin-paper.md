@@ -17,17 +17,21 @@ comments: true
 
 ###### 본 논문에서는 Self Attention을 활용하여 문장 내의 단어끼리의 연관성을 직접적으로 나타내는 Transformer을 제안하고 있습니다.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n1.jpg){: .align-center}
+<br/>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n1.jpg" width="400px"></p>
+<br/>
 
 ###### 위의 그림은 논문에서 제시한 Transformer 모델 구조입니다. 이를 자세히 살펴보겠습니다.
 
-
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n2.jpg){: .align-center}
+<br/>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n2.jpg" width="400px"></p>
+<br/>
 
 ###### Multi Head Attention을 설명하기 앞서 Self Attention에 대해서 설명하겠습니다. Self Attention은 입력으로 들어온 문장 내에서 단어간의 연관성을 Attention을 활용하여 측정하고 적용하는 것이라고 할 수 있습니다. 예를들어 위의 그림처럼 "I am a student" 라는 문장이 있을 때, I 라는 단어와 자기 자신을 포함한 나머지 단어들과의 연관성을 계산하고 Softmax로 확률 값으로 만든 후 이를 다시 입력 값에 적용하게 됩니다.
 
-
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n3.jpg){: .align-center}
+<br/>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n3.jpg" width="400px"></p>
+<br/>
 
 ###### Self Attention의 구체적 계산 방식은 다음과 같습니다.
 * 먼저 입력으로 들어온 단어들을 Feature Embedding 시켜서 위의 그림의 X처럼 만듭니다.
@@ -37,7 +41,9 @@ comments: true
 ###### 여기에서 $Q(Querys), K(Keys), V(Vectors)$ 각각의 의미를 설명하겠습니다. 먼저 Querys 는 비교 주체이고 Keys 는 비교 대상이 됩니다. 예를 들어 $Query$가 "I" 일 때, $Keys$는 ["I","am","a","student"] 가 되어 Dot Product를 통해 연관 정보를 추출합니다. 연관 정보를 정규화 시키고 $Softmax$를 진행하여 확률 값을 만들고, 모델의 Feature에 해당하는 $Vector$에 이를 곱하여 Attention 정보를 적용하게 됩니다.
 
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n4.jpg){: .align-center}
+<br/>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/origin/n4.jpg" width="500px"></p>
+<br/>
 
 ###### Multi-Head Attention의 경우, Self Attention을 위한 Matrix Weight을 $h$개(위의 그림에서는 $h=8$)로 하여 각기 다른 $Z_i$를 만들고 Concat한 후 다시 $W_0$를 곱하여 Output $Z$를 만들게 됩니다. 하나의 Self Attention을 사용할 경우 다양한 연관성을 고려하지 못할 것을 대비한 것으로 보입니다.
 
