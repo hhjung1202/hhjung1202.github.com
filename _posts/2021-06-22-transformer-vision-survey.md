@@ -38,3 +38,25 @@ comments: true
 * Criss Cross Attention
 논문의 제목은 "CCNet: Criss-Cross Attention for Semantic Segmentation" 이며 ICCV 2019에 발표된 논문입니다.
 
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/2-1.jpg){: .align-center}
+
+위의 그림에서 보듯이 Non Local Neural Networks 에서 사용된 Non local block 의 경우, 픽셀간의 연관성을 학습하기 위해서 자신을 포함한 모든 픽셀들과 비교하는 반면 Criss-Cross Attention block의 경우 픽셀의 가로축과 세로축의 연관성만을 고려하여 연산량을 $O(N^2)$ 에서 $O(2 \times sqrt(N))$ 으로 만듭니다. Non local block 에서처럼 full-image contextual information을 모델링 하기 위해서 Attention 2번 진행하여 전체 픽셀과의 연관성을 고려할 수 있게 하였습니다.
+
+* Stand-Alone Self-Attention
+논문의 제목은 "Stand-Alone Self-Attention in Vision Models" 이며 NIPS 2019에 발표된 논문입니다.
+
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/3-1.jpg){: .align-center}
+
+CNN 연산을 기반으로 된 ResNet 모델에서 Convolutional Layer을 Local Self-Attention Layer로 바꾸어 모델을 경량화한 연구입니다.
+
+* Local Relation Networks
+논문의 제목은 "Local Relation Networks for Image Recognition" 이며 ICCV 2019에 발표된 논문입니다.
+
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/4-1.jpg){: .align-center}
+
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/4-2.jpg){: .align-center}
+
+학습이 완료된 CNN의 경우 입력 이미지의 특성과 관계없이 고정된 Weight를 가지게 되는데, 이 논문에서는 Local Relation Layer을 제안하며 입력 이미지의 특징에 따라 Adaptive한 Weight Aggregation을 수행합니다. 아래의 Local Relation Layer을 자세히 살펴보면, 한 픽셀의 정보를 계산하기 위해 $7 \times 7$ 픽셀을 사용합니다. $1 \times 1$ CNN을 통과한 Query Map과 Key Map은 각각 비교 주체와 대상이 되어 연관성을 계산하고 Geometry 정보를 포함시킨 후 $Softmax$를 통해 Aggregation Weight을 계산하고 이를 Feature Map에 적용하는 과정을 통해 Weight Aggregation을 수행하게 됩니다.
+
+* Attention Augmented Convolutional Networks
+
