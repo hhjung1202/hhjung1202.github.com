@@ -21,8 +21,6 @@ comments: true
    + Attention Augmented Convolutional Networks
    + Vectorized Self-Attention
    + Vision Transformer
-   + Data-Efficient Image Transformers
-   + CLIP: Contrastive Language–Image Pre-training
 
 <br/>
 <h1><span style="color:green">1. Non Local Neural Networks</span></h1>
@@ -65,4 +63,25 @@ CNN 연산을 기반으로 된 ResNet 모델에서 Convolutional Layer을 Local 
 
 <br/>
 <h1><span style="color:green">5. Attention Augmented Convolutional Networks</span></h1>
+논문의 제목은 "Attention Augmented Convolutional Networks" 이며 ICCV 2019에 발표된 논문입니다.
+
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/5-1.jpg" width="600px"></p>
+
+위의 논문은 Transformer 를 직접적으로 적용했다고 보기는 어렵지만 CNN의 translation equivariance (입력의 위치가 변하면 출력도 동일하게 위치가 변하는 성질)은 유지하면서 Self-Attention 메커니즘을 적용하기 위한 Relative Position Encoding 기반의 연산을 제안했습니다.
+
+<br/>
+<h1><span style="color:green">6. Vectorized Self-Attention</span></h1>
+논문의 제목은 "Exploring Self-attention for Image Recognition" 이며 CVPR 2020에 발표된 논문입니다. 일반적으로 CNN이 수행하는 Feature Aggregation과 Transformation을 분리하여 Self Attention을 통한 Feature Aggregation과 Element-wise perceptrons을 활용한 Feature Transformation을 진행합니다.
+
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/6-1.jpg" width="400px"></p>
+
+논문에서는 Feature Aggregation을 위한 Self Attention으로 Pairwise Self-Attention과 Patch-wise Self-Attention을 제안합니다. 그림의 연산 과정을 살펴보면 먼저 $1 \times 1$ CNN Layer(=Point wise Linear)을 통과하여 $\phi, \psi$ Relation 연산을 통해서 $\delta$를 만듭니다. 이 때 Relation은 $+, -, Concat$ 등으로 정의하였습니다. 만들어진 Relation과 $1 \times 1$ CNN Layer를 통과하여 만든 $\beta$에 Aggregation을 진행하여 spatial과 channel에 대한 weight를 학습하는 Vector Attention을 만들었습니다. 이렇게 구성한 Self-Attention Networks (SAN)을 통해 더 적은 수의 parameter로 ImageNet 데이터 셋에서 ResNet보다 우수한 성능을 거둘 수 있었다고 합니다.
+
+
+<br/>
+<h1><span style="color:green">7. Vision Transformer</span></h1>
+논문의 제목은 "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" 이며 ICLR 2021에 발표된 논문입니다. 
+
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/7-1.jpg" width="400px"></p>
+
 
