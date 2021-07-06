@@ -84,4 +84,15 @@ CNN 연산을 기반으로 된 ResNet 모델에서 Convolutional Layer을 Local 
 
 <p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/7-1.jpg" width="400px"></p>
 
+이전 포스트에서 설명했던 Attention is all you need 논문에서 사용된 Transformer 모델의 기본 틀을 그대로 가져왔습니다. 차이점은 이전의 Task는 자연어처리이기에 입력으로 들어온 문장의 구성요소인 문자들간의 연관성을 학습한 데 반해 이 논문에서는 Vision 모델에 적용하였습니다. 앞선 연구들과 다르게 위의 그림에서 보듯이 입력 이미지($H,W$)를 Fixed Patch Size ($P,P$)로 찢습니다. _BERT'_ 논문에서 사용되었듯이 각 Patch의 원래 위치인 Position 정보와 Class 정보를 함께 Embedding하여 전달합니다. 자세한 연산 과정은 아래의 수식과 같습니다.
+_BERT': Pre-training of Deep Bidirectional Transformers for Language Understanding_
 
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/survey1/7-2.jpg" width="700px"></p>
+
+Hybrid Architecture로 이미지를 Patch로 나누는 것이 아닌 ResNet의 중간 Feature Map을 사용하여 INPUT SEQUENCE를 생성하여 추가로 실험을 진행했습니다. 또한 Large Scale에서 Pre-train을 진행하면서 Higher Resolution 이미지를 사용했을 때에 Position Embedding이 전혀 달라질 것을 고려하여 원본 이미지에서의 위치에 따라 pre-trained position embedding의 2D interpolation을 수행합니다.
+
+여기서 제한사항은 Transformer 기반의 방법들은 무수히 많은 양의 데이터 셋으로 pre-training을 시킨 뒤 downstream task (e.g. ImageNet)에 fine-tuning을 시켜야 좋은 성능을 보입니다. 하지만 실험에서 사용한 대용량의 데이터셋은 Google 내부에서만 사용하고 있는 300 million image 데이터 셋인 JFT-300M이라 Google이 아닌 연구 집단에서는 같은 방법을 적용해도 좋은 성능이 나올 수 없다는 뜻입니다.
+
+CNN과 Transformer를 비교해보면, CNN은 translation equivariance 등 inductive bias가 많이 들어가 있는 모델이라 비교적 적은 수의 데이터로도 어느정도 성능이 보장이 되는 반면, Transformer는 inductive bias가 거의 없는 모델이라 학습해야 하는 내용이 더 많아서 필연적으로 많은 수의 데이터가 있어야 성능이 향상됩니다. 이 점이 Transformer의 장점이자 단점이 될 수 있는 부분인데 Google에서는 많은 수의 데이터를 통해 장점으로 승화시킨 점이 인상깊지만 많은 수의 데이터를 확보하기 어려운 분야에서는 적용하기 어렵다는 단점도 잘 보여주는 것 같습니다.
+
+<h1><span style="color:black">이로써 Transformers in Vision: A Survey 1부 리뷰를 마치도록 하겠습니다. 곧 2부로 찾아뵙도록 하겠습니다.</span></h1>
