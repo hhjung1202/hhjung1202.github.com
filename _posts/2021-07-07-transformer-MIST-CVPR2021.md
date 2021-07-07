@@ -18,16 +18,16 @@ comments: true
 <br/>
 <h1><span style="color: #40A940">1. Introduction</span></h1>
 
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/1.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/2.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/3.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/4.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/5.jpg" width="400px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/1.jpg" width="800px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/2.jpg" width="800px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/3.jpg" width="800px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/4.jpg" width="800px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/5.jpg" width="800px"></p>
 <p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/5-1.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6-1.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6-2.jpg" width="400px"></p>
-<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/7.jpg" width="400px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6.jpg" width="800px"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6-1.jpg" width="400px"> <img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/6-2.jpg" width="400px"></p>
+<p align="center"></p>
+<p align="center"><img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer/mist/7.jpg" width="800"></p>
 
 
 
